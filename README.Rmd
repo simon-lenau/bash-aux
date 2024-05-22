@@ -41,7 +41,7 @@ print_help <-
     cat(
       system(
         paste0(
-          "/usr/bin/env -c \"source ./bash-aux-init && ",
+          "/usr/bin/env bash -c \"source ./bash-aux-init && ",
       x,
       " --help\""
       ), 
@@ -60,29 +60,41 @@ Auxiliary functions to be used in bash
 ## Dependency checks
 
 ### check_dependencies
-Checks whether an array of commands, e.q. `("jq" "perl")`, are available in bash
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("check_dependencies")
+```
 
 ### check_dependency
-Checks whether a command, e.q. `"perl"`, is available in bash
-
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("check_dependency")
+```
 
 
 ## Folders & Files
 
 ### current_file
-Determine the current file path, using `"${BASH_SOURCE}"` in bash and `"${(%):-%x}"` in zsh
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("current_file")
+```
 
 ### make_file_path
-Create file from path, create path if it does not exist
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("make_file_path")
+```
 
 ### normalize_path
-Normalize a folder / file path
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("normalize_path")
+```
 
 ### read_from_file
-Read a file. Like `cat`, but returns empty string if file does not exist
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("read_from_file")
+```
 
 ## Misc
 
 ### read_non_blocking
-Read input from stdin / pipe / user input, but don't wait for the input
-
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("read_non_blocking")
+```

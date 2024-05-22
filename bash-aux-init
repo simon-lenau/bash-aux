@@ -12,7 +12,6 @@ if [ -z "${BASH_AUX_DIR}" ]; then
     fi
     BASH_AUX_DIR="$(dirname $(readlink -f "${current_file}"))"
 fi
-echo "BASH_AUX_DIR: ${BASH_AUX_DIR}"
 
 # ========================== > Source submodules < =========================== #
 source ${BASH_AUX_DIR}/submodules/bash-doc/bash-doc-init

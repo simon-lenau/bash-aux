@@ -1,7 +1,7 @@
 function read_from_file {
     init_doc
     init_desc \
-        "Read a file, but return empty string if file does not exist"
+        "Read a file.\nLike \`cat\`, but returns empty string if file does not exist"
     init_arg "str" "file" "The file to read from" "~/path/to/file"
 
     need_help $@ && return $?
