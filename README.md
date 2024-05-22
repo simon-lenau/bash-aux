@@ -16,20 +16,6 @@ in bash
 
 Checks whether a command, e.q. `"perl"`, is available in bash
 
-## Console messages
-
-### err
-
-Formats and prints error messages
-
-### indent
-
-Uniform indentation of console messages
-
-### newline
-
-Uniform indentation of console messages
-
 ## Folders & Files
 
 ### current_file
@@ -51,14 +37,6 @@ Read a file. Like `cat`, but returns empty string if file does not exist
 
 ## Misc
 
-### max
-
-Determine maximum of multiple numbers
-
 ### read_non_blocking
 
 Read input from stdin / pipe / user input, but don’t wait for the input
-
-### rep
-
-Repeat a sequence of characters a specified number of times
