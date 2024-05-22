@@ -1,7 +1,0 @@
-function rep {
-    for ((i = 1; i <= $2; i++)); do
-        printf -- "${1}"
-    done
-    echo ''
-}
-
