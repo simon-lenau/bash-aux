@@ -57,7 +57,7 @@ Determine maximum of multiple numbers
 
 ### read_non_blocking
 
-Read input from stdin / pipe / user input, but don’t wait for the input”
+Read input from stdin / pipe / user input, but don’t wait for the input
 
 ### rep
 
