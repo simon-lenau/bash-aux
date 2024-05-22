@@ -22,15 +22,10 @@ source ${BASH_AUX_DIR}/submodules/bash-doc/bash-doc-init
 source ${BASH_AUX_DIR}/functions/check_dependencies
 source ${BASH_AUX_DIR}/functions/check_dependency
 source ${BASH_AUX_DIR}/functions/current_file
-source ${BASH_AUX_DIR}/functions/err
-source ${BASH_AUX_DIR}/functions/indent
 source ${BASH_AUX_DIR}/functions/make_file_path
-source ${BASH_AUX_DIR}/functions/max
-source ${BASH_AUX_DIR}/functions/newline
 source ${BASH_AUX_DIR}/functions/normalize_path
 source ${BASH_AUX_DIR}/functions/read_from_file
 source ${BASH_AUX_DIR}/functions/read_non_blocking
-source ${BASH_AUX_DIR}/functions/rep
 # ────────────────────────────────── <end> ─────────────────────────────────── #
 # ========================= > Export all functions < ========================= #
 eval "$(declare -F |
