@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+pkg_name="bash_aux"
+
+pkg_includeguard="__${pkg_name}_included__"
+pkg_dir="__${pkg_name}_dir__"
+
+if [ -n "${!pkg_includeguard}" ]; then return 0; fi
+export ${pkg_includeguard}=true
+
+if [ -z "${!pkg_dir}" ]; then
+    current_file=
+    if [ -n "$BASH_VERSION" ]; then
+        current_file="${BASH_SOURCE[-1]}"
+    elif [ -n "$ZSH_VERSION" ]; then
+        current_file="${(%):-%N}"
+    fi
+    declare ${pkg_dir}="$(dirname $(readlink -f "${current_file}"))"
+fi
+
+# ========================== > Source submodules < =========================== #
+source ${!pkg_dir}/submodules/bash-doc/bash-doc-init
+# ────────────────────────────────── <end> ─────────────────────────────────── #
+
+# ===================== > Source and export functions < ====================== #
+source ${!pkg_dir}/functions/check_dependencies
+source ${!pkg_dir}/functions/check_dependency
+source ${!pkg_dir}/functions/current_file
+source ${!pkg_dir}/functions/err
+source ${!pkg_dir}/functions/indent
+source ${!pkg_dir}/functions/make_file_path
+source ${!pkg_dir}/functions/max
+source ${!pkg_dir}/functions/newline
+source ${!pkg_dir}/functions/normalize_path
+source ${!pkg_dir}/functions/read_from_file
+source ${!pkg_dir}/functions/read_non_blocking
+source ${!pkg_dir}/functions/rep
+# ────────────────────────────────── <end> ─────────────────────────────────── #
+# ========================= > Export all functions < ========================= #
+eval "$(declare -F | sed -e 's/-f /-fx /')"
+# ────────────────────────────────── <end> ─────────────────────────────────── #
+__bash_aux_output_redirected__="false"
+(command -v "tput" >/dev/null 2>&1) &&
+    {
+        __bash_aux_has_tput__="true"
+    } || {
+    __bash_aux_has_tput__="false"
+}
+

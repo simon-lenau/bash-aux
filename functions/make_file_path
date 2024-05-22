@@ -1,0 +1,19 @@
+function make_file_path {
+    init_doc
+    init_desc \
+        "Create file from path"
+    init_arg "str" "file" "The file to create the path for" "~/path/to/file"
+
+    need_help $@ && return $?
+
+    eval "$(parse_arguments "$@")"
+
+    # Make sure path is fully expanded, as mkdir and > do not expand ~
+    local file=$(eval "echo "${file}"")
+    # Create path
+    mkdir -p "$(dirname "${file}")"
+    # Create file
+    touch "${file}"
+        # Set file permissions
+    chmod u=rw,g=,o= "${file}"
+}

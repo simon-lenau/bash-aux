@@ -1,0 +1,15 @@
+function check_dependencies {
+    init_doc
+    init_desc \
+        "Check whether multiple shell-commands are available"
+    init_arg "str" "commands" "The commands to be checked for availability" "ls chmod"
+
+    need_help $@ && return $?
+
+    eval "$(parse_arguments "$@")"
+
+    # Check each dependency
+    for command in "${commands[@]}"; do
+        check_dependency --command "$command"
+    done
+}
