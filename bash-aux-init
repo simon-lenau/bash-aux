@@ -17,6 +17,11 @@ fi
 source ${BASH_AUX_DIR}/submodules/bash-doc/bash-doc-init
 # ────────────────────────────────── <end> ─────────────────────────────────── #
 
+# =================== > Save currently defined functions < =================== #
+# To exclude them from exporting
+functions_not_export="$(declare -F)"
+# ────────────────────────────────── <end> ─────────────────────────────────── #
+
 # ===================== > Source and export functions < ====================== #
 source ${BASH_AUX_DIR}/functions/check_dependencies
 source ${BASH_AUX_DIR}/functions/check_dependency
@@ -26,7 +31,18 @@ source ${BASH_AUX_DIR}/functions/normalize_path
 source ${BASH_AUX_DIR}/functions/read_from_file
 source ${BASH_AUX_DIR}/functions/read_non_blocking
 # ────────────────────────────────── <end> ─────────────────────────────────── #
-# ========================= > Export all functions < ========================= #
-eval "$(declare -F |
-    perl -p0e "s/declare\s+-f\s+(.*)\s*$/export -f \${1}/gmi" )"
+# ================== > Export all newly defined functions < ================== #
+readarray -t functions <<<"$(declare -F)"
+
+functions_export="$(
+    for function in "${functions[@]}"; do
+        if [[ ! $functions_not_export =~ $function ]];then
+            echo "$function" | 
+            perl -p0e "s/declare\s+-f\s+(.*)\s*$/export -f \${1}\n/gi" 
+        fi
+    done
+)"
+
+eval "${functions_export}"
 # ────────────────────────────────── <end> ─────────────────────────────────── #
+
