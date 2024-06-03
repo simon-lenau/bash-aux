@@ -2,7 +2,8 @@
 
 
 
-Auxiliary functions to be used in bash
+Collection of helpful functions for [bash](https://www.gnu.org/software/bash/).
+Core functions are outlined below.
 
 # Core functions
 
