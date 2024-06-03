@@ -1,9 +1,3 @@
----
-noteId: "f0897f70218311efb7d40bb520a611b5"
-tags: []
-
----
-
 # bash-aux
 
 
