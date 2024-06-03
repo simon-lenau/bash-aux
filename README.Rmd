@@ -54,7 +54,6 @@ print_help <-
 
 Auxiliary functions to be used in bash
 
-
 # Core functions
 
 ## Dependency checks
@@ -68,7 +67,6 @@ print_help("check_dependencies")
 ```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
 print_help("check_dependency")
 ```
-
 
 ## Folders & Files
 
