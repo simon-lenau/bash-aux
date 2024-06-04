@@ -1,10 +1,5 @@
----
-noteId: "54fd35a0226011efab86995c8100ea0e"
-tags: []
-
----
-
 # bash-aux
+
 
 
 
@@ -108,10 +103,14 @@ Core functions are outlined below.
       --path     &lt;str&gt; 
          The path to create the log files in
          Default: .
+      --content  &lt;str&gt; 
+         The content to log
+         Default: Hello, world!
 
    Usage:      
       bash_aux_log \
-         --path     "."
+         --path     "." \
+         --content  "Hello, world!"
 </code></pre>
 
 ## Misc
