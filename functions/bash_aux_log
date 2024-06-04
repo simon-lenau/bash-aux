@@ -2,7 +2,7 @@ function bash_aux_log {
     init_doc
     init_desc \
         "Create log files based on the called function's name"
-    init_arg "str" "path" "The path to create the log files in" "\${PWD}"
+    init_arg "str" "path" "The path to create the log files in" "."
 
     need_help $@ && return $?
 
