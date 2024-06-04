@@ -1,0 +1,19 @@
+function log {
+    init_doc
+    init_desc \
+        "Create log files based on the called function's name"
+    init_arg "str" "path" "The path to create the log files in" "${PWD}"
+
+    need_help $@ && return $?
+
+    eval "$(parse_arguments "$@")"
+
+    path="$(normalize_path "${path}")"
+
+    caller=($(
+        caller |
+            awk '{print $2":"$1}' |
+            perl -p0e "s/.*?([^\/]+)\:([0-9]+)/\${1} \${2}/gi"
+    ))
+    printf "%b\n" "[${caller[1]}]: ${1}" >>"${path}/${caller[0]}.log"
+}

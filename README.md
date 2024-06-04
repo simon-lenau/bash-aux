@@ -14,7 +14,7 @@ Core functions are outlined below.
    Check whether multiple shell-commands are available
 
    Arguments:      
-      --commands &lt;str&gt; 
+      --commands &lt;array&gt; 
          The commands to be checked for availability
          Default: ls chmod
 
@@ -91,6 +91,14 @@ Core functions are outlined below.
       read_from_file \
          --file     "~/path/to/file"
 </code></pre>
+
+## Logging
+
+
+```
+Warning in system(paste0("/usr/bin/env bash -c \"source ./bash-aux-init && ", : running command '/usr/bin/env bash -c "source ./bash-aux-init && log --help"'
+had status 64
+```
 
 ## Misc
 

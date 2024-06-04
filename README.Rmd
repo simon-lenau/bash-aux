@@ -91,6 +91,12 @@ print_help("normalize_path")
 print_help("read_from_file")
 ```
 
+## Logging
+
+```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
+print_help("log")
+```
+
 ## Misc
 
 ### read_non_blocking
