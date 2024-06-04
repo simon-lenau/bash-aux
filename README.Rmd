@@ -94,7 +94,7 @@ print_help("read_from_file")
 ## Logging
 
 ```{r, eval=TRUE, echo=FALSE,include=TRUE,comment=""}
-print_help("log")
+print_help("bash_aux_log")
 ```
 
 ## Misc

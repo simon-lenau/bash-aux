@@ -1,4 +1,4 @@
-function log {
+function bash_aux_log {
     init_doc
     init_desc \
         "Create log files based on the called function's name"

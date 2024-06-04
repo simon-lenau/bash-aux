@@ -23,6 +23,7 @@ functions_not_export="$(declare -F)"
 # ────────────────────────────────── <end> ─────────────────────────────────── #
 
 # ===================== > Source and export functions < ====================== #
+source ${BASH_AUX_DIR}/functions/bash_aux_log
 source ${BASH_AUX_DIR}/functions/check_dependencies
 source ${BASH_AUX_DIR}/functions/check_dependency
 source ${BASH_AUX_DIR}/functions/current_file
@@ -45,4 +46,3 @@ functions_export="$(
 
 eval "${functions_export}"
 # ────────────────────────────────── <end> ─────────────────────────────────── #
-

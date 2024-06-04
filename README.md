@@ -94,11 +94,18 @@ Core functions are outlined below.
 
 ## Logging
 
+<pre class="r-output"><code>bash_aux_log   
+   Create log files based on the called function's name
 
-```
-Warning in system(paste0("/usr/bin/env bash -c \"source ./bash-aux-init && ", : running command '/usr/bin/env bash -c "source ./bash-aux-init && log --help"'
-had status 64
-```
+   Arguments:      
+      --path     &lt;str&gt; 
+         The path to create the log files in
+         Default: /Users/simonlenau/Projects_Personal/bash-aux
+
+   Usage:      
+      bash_aux_log \
+         --path     "/Users/simonlenau/Projects_Personal/bash-aux"
+</code></pre>
 
 ## Misc
 
