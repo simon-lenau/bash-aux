@@ -3,17 +3,19 @@ function bash_aux_log {
     init_desc \
         "Create log files based on the called function's name"
     init_arg "str" "path" "The path to create the log files in" "."
+    init_arg "str" "content" "The content to log" "Hello, world!"
 
     need_help $@ && return $?
 
     eval "$(parse_arguments "$@")"
 
-    path="$(normalize_path "${path}")"
+    path="$(normalize_path --path "${path}")"
+
 
     caller=($(
         caller |
             awk '{print $2":"$1}' |
             perl -p0e "s/.*?([^\/]+)\:([0-9]+)/\${1} \${2}/gi"
     ))
-    printf "%b\n" "[${caller[1]}]: ${1}" >>"${path}/${caller[0]}.log"
+    printf "%b " "[${caller[1]}]:" "${content[@]}" "\n" >>"${path}/${caller[0]}.log"
 }
