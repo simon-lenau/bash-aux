@@ -1,10 +1,5 @@
----
-noteId: "25e4ef60226011efab86995c8100ea0e"
-tags: []
-
----
-
 # bash-aux
+
 
 
 
@@ -106,11 +101,11 @@ Core functions are outlined below.
    Arguments:      
       --path     &lt;str&gt; 
          The path to create the log files in
-         Default: /Users/simonlenau/Projects_Personal/bash-aux
+         Default: .
 
    Usage:      
       bash_aux_log \
-         --path     "/Users/simonlenau/Projects_Personal/bash-aux"
+         --path     "."
 </code></pre>
 
 ## Misc
